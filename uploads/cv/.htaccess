@@ -1,0 +1,15 @@
+# Protect CV files - only allow direct access
+
+<Files \*.pdf> # Allow PDF files to be viewed
+</Files>
+
+# Prevent directory browsing
+
+Options -Indexes
+
+# Prevent access to other file types
+
+<FilesMatch "\.(txt|log|sql|backup)$">
+Order allow,deny
+Deny from all
+</FilesMatch>
